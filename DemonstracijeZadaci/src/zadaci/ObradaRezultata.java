@@ -35,10 +35,10 @@ public class ObradaRezultata {
             FileWriter writer = new FileWriter("polozili.txt");
             writer.write("");
             while(scanner.hasNextLine()) {
-                StringBuilder sb = new StringBuilder();
-
                 String format = scanner.nextLine();
+
                 format = format.replace("\uFEFF","");
+
                 System.out.println(format);
                 String[] splitMain = format.split(", ");
 
@@ -49,8 +49,7 @@ public class ObradaRezultata {
                 String[] ime = splitMain[0].split(" ");
                 String index = splitMain[1].split("/")[1].split(" ")[0];
 
-                sb.append(index + " - " + ime[1] + " " + ime[0] + "(" + splitMain[2] + ")" + "\n");
-                writer.append(sb);
+                writer.append(index + " - " + ime[1] + " " + ime[0] + "(" + splitMain[2] + ")" + "\n");
             }
             writer.close();
             scanner.close();
