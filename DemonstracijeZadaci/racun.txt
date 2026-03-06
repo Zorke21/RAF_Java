@@ -1,0 +1,12 @@
+Kupac: Pera Peric
+Mleko;150.5;2
+Hleb;80.0;1
+Cokolada;120.0;3
+Sok Jabuka 1L;145.9;4
+Kupac: Ana Anic
+Testenina Fusilli 500g;180.0;2
+Pavlaka za kuvanje;240.5;1
+Kupac: Zoran Zoric
+Cips;120;5
+Pivo 0.5L;90.5;10
+Flasteri;350.0;1
