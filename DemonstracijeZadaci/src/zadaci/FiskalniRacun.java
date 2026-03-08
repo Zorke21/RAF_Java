@@ -30,8 +30,52 @@ import java.util.Scanner;
  * UKUPNO ZA PLACANJE: 600.5
  * 
  */
-public class FiskalniRacun {
+public class FiskalniRacun{
     public static void main(String[] args) {
-
+        try {
+            Scanner sc = new Scanner(new File("racun.txt"));
+            StringBuilder sb = new StringBuilder();
+            double price = 0;
+            boolean first = true;
+            while(sc.hasNextLine()){
+                String format = sc.nextLine();
+                format = format.replace("\uFEFF","");
+                if(format.startsWith("Kupac:")){
+                    if(first){
+                        sb.append("Fiskalni racun - ")
+                          .append(format)
+                          .append("\n---------------------------------\n");
+                        first = false;
+                    }else{
+                        sb.append("---------------------------------\nUKUPNO ZA PLACANJE: ")
+                          .append(price)
+                          .append("\n");
+                        price = 0;
+                        System.out.println(sb);
+                        sb.setLength(0);
+                        sb.append("Fiskalni racun - ")
+                          .append(format)
+                          .append("\n---------------------------------\n");
+                    }
+                } else{
+                    String[] split = format.split(";"); //0 - produkt 1 - cena 2 - kolicina
+                    double fullPrice = Double.parseDouble(split[2]) * Double.parseDouble(split[1]);
+                    price += fullPrice;
+                    sb.append(split[0])
+                      .append(split[2])
+                      .append(" = ")
+                      .append(String.format("%.2f",fullPrice))
+                      .append("\n");
+                }
+            }
+            sb.append("---------------------------------\nUKUPNO ZA PLACANJE: ")
+              .append(String.format("%.2f",price))
+              .append("\n");
+            price = 0;
+            System.out.println(sb);
+            sc.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 }

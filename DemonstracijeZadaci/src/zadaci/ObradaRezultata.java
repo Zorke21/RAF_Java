@@ -47,9 +47,17 @@ public class ObradaRezultata {
                 }
 
                 String[] ime = splitMain[0].split(" ");
-                String index = splitMain[1].split("/")[1].split(" ")[0];
-
-                writer.append(index + " - " + ime[1] + " " + ime[0] + "(" + splitMain[2] + ")" + "\n");
+                String index = splitMain[1].split("/")[1]
+                                           .split(" ")[0];
+                writer.append(index)
+                      .append(" - ")
+                      .append(ime[1])
+                      .append(" ")
+                      .append(ime[0])
+                      .append("(")
+                      .append(splitMain[2])
+                      .append(")")
+                      .append("\n");
             }
             writer.close();
             scanner.close();
