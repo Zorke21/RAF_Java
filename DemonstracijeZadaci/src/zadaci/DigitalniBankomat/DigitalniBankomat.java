@@ -1,4 +1,4 @@
-package zadaci;
+package zadaci.DigitalniBankomat;
 
 import java.util.Scanner;
 

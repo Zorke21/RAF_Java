@@ -1,7 +1,6 @@
-package zadaci;
+package zadaci.fiskalniracun;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**

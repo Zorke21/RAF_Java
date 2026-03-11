@@ -1,9 +1,7 @@
-package zadaci;
+package zadaci.obradarezultata;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -30,9 +28,9 @@ import java.util.Scanner;
 public class ObradaRezultata {
     public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(new File("rezultati.txt"));
+            Scanner scanner = new Scanner(new File("src\\zadaci\\obradarezultata\\rezultati.txt"));
 
-            FileWriter writer = new FileWriter("polozili.txt");
+            FileWriter writer = new FileWriter("src\\zadaci\\obradarezultata\\polozili.txt");
             writer.write("");
             while(scanner.hasNextLine()) {
                 String format = scanner.nextLine();
